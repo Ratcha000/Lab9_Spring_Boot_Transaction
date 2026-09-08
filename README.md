@@ -336,7 +336,7 @@ Controller มีหน้าที่รับ Request จาก Client แล�
 
 ---
 
-## 11. ทดลองใช้งาน
+## 11. ทดลองใช้งานด้วย Postman
 
 ให้ใช้ **Postman** ทดสอบ API ทั้ง 3 เส้น
 
@@ -350,6 +350,11 @@ Controller มีหน้าที่รับ Request จาก Client แล�
 
 > เมื่อเลือก `JSON` แล้ว Postman จะใส่ `Content-Type: application/json` ให้เอง
 > **ไม่ต้อง**ไปเพิ่มเองในแท็บ Headers
+
+---
+
+โดยนี้คือหน้าตาตัวอย่า code ของ Transaction ที่อยู่ใน DepositService.java (เป็นตัวอย่างนะครับ ถ้าใครเขียนโค้ดมารูปแบบคล้ายๆกันเหมือนกันสามารถทำตามได้เลย)
+![ตัวอย่างTransaction @Transactional](picture/A.png)
 
 ### 11.1 สร้าง Account
 
@@ -479,29 +484,7 @@ throw new RuntimeException("Test Rollback");
 
 โค้ดทั้งเมธอดจะกลายเป็นแบบนี้
 
-```java
-@Transactional
-public void deposit(Long accountId, Double amount) {
-
-    Account account = accountRepository
-            .findById(accountId)
-            .orElseThrow();
-
-    account.setBalance(
-            account.getBalance() + amount
-    );
-
-    accountRepository.save(account);
-
-    DepositTransaction deposit = new DepositTransaction();
-    deposit.setAmount(amount);
-    deposit.setAccount(account);
-
-    depositRepository.save(deposit);
-
-    throw new RuntimeException("Test Rollback");   // ← บรรทัดที่เพิ่มเข้ามา
-}
-```
+![ตัวอย่างการThrowError @Transactional](picture/AddThrow.jpg)
 
 > **สังเกตตำแหน่งของบรรทัดที่โยน Error**
 >
