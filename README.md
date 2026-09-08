@@ -480,7 +480,7 @@ SELECT * FROM deposit_transaction;
 throw new RuntimeException("Test Rollback");
 ```
 
-โค้ดทั้งเมธอดจะกลายเป็นแบบนี้
+โค้ดทั้งเมธอดจะกลายเป็นแบบนี้ (น้องสามารถทดลองใส่ Error จุดต่างๆเพื่อทดสอบการทำงานของ @Transactional ได้นะครับ)
 
 ![ตัวอย่างการThrowError @Transactional](picture/AddThrow.jpg)
 
