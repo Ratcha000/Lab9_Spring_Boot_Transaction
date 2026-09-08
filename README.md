@@ -584,7 +584,7 @@ SELECT * FROM deposit_transaction;
 
 ## 13. ทดลองโดยเอา `@Transactional` ออก
 
-![ตัวอย่างการปิด @Transactional](picture/removeTransaction1.png)
+![ตัวอย่างการปิด @Transactional](picture/removeTransaction1.jpg)
 
 ให้ลบ
 
