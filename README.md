@@ -2,7 +2,7 @@
 
 > ### เอกสารอ่านประกอบ
 >
-> ถ้าอ่านใบงานนี้แล้วยังไม่เข้าใจว่า Transaction คืออะไร หรือ `@Transactional` ทำงานอย่างไร
+> สวัดดีครับน้องๆ ตอนนี้เรามาถึง Lab9 แล้ว ถ้าอ่านใบงานนี้แล้วยังไม่เข้าใจว่า Transaction คืออะไร หรือ `@Transactional` ทำงานอย่างไร
 > ให้อ่าน **[Study_Notes.md](Study_Notes.md)** ประกอบ เป็นเอกสารที่อธิบายตั้งแต่พื้นฐาน
 
 
@@ -583,6 +583,8 @@ SELECT * FROM deposit_transaction;
 ---
 
 ## 13. ทดลองโดยเอา `@Transactional` ออก
+
+![ตัวอย่างการปิด @Transactional](picture/removeTransaction1.png)
 
 ให้ลบ
 
