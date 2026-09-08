@@ -369,7 +369,7 @@ Controller มีหน้าที่รับ Request จาก Client แล�
 ```json
 {
     "accountNumber": "1234567890",
-    "ownerName": "John",
+    "ownerName": "ใส่ชื่อตัวเองนะ",
     "balance": 0
 }
 ```
@@ -434,7 +434,7 @@ Controller มีหน้าที่รับ Request จาก Client แล�
 ```json
 {
     "accountNumber": "1234567890",
-    "ownerName": "ใส่ชื่อตวเอง",
+    "ownerName": "John",
     "balance": 1000.0,
     "id": 1
 }
