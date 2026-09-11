@@ -218,6 +218,30 @@ public void placeOrder() {
     throw new RuntimeException("จ่ายเงินไม่สำเร็จ");
 }
 ```
+
+```
+placeOrder()
+│
+│ Transaction A
+│
+├── save Order
+│
+└── logOrderAttempt()
+          │
+          │ "ขอ Transaction ใหม่"
+          ▼
+       Transaction B
+          │
+          └── save Log
+          │
+          └── Commit B (save)
+          
+กลับมาที่ Transaction A
+│
+└── throw Error
+       ↓
+   Rollback A (error)
+```
 ผลลัพธ์: **ออเดอร์ → ถูก rollback (ไม่บันทึก)** แต่ **log การพยายามสั่งซื้อ → ถูก commit (บันทึกไว้)** เพราะอยู่คนละ transaction กัน
 
 #### ตัวอื่นๆ (ใช้น้อยกว่า แต่ควรรู้จักไว้)
